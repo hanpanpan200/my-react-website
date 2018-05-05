@@ -16,7 +16,11 @@ class App extends Component {
         <p className="App-intro">
           01. Compound Component Demo
         </p>
-        <Toggle onToggle={this.onToggle} />
+        <Toggle onToggle={this.onToggle}>
+          <Toggle.Button />
+          <Toggle.On>The button is on</Toggle.On>
+          <Toggle.Off>The button is off</Toggle.Off>
+        </Toggle>
       </div>
     );
   }
