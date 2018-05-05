@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
+import Toggle from './compound-component/Toggle';
 import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  onToggle = on => console.log('toggle status is:', on);
+  
   render() {
     return (
       <div className="App">
@@ -11,8 +14,9 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
+          I. Compound Component Demo
         </p>
+        <Toggle onToggle={this.onToggle} />
       </div>
     );
   }
