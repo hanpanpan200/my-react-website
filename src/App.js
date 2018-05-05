@@ -14,7 +14,7 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <p className="App-intro">
-          I. Compound Component Demo
+          01. Compound Component Demo
         </p>
         <Toggle onToggle={this.onToggle} />
       </div>

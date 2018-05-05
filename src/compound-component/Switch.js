@@ -1,22 +1,27 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+import './CompoundComponent.css'
 
-export default class Switch extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      on: this.props.on,
-    }
-  }
-  
-  onChange = event => {
-    const on = !this.state.on
-    this.setState({ on }, () => {
-      this.props.onClick(on)
-    })
-  }
-
-  render() {
-    const { on } = this.state
-    return <input ref={(input) => { this.switch = input }}  checked={on} onChange={this.onChange} type="checkbox" />
-  }
+const Switch = ({on, ...props}) => {
+  return (
+    <div className="toggle">
+      <input
+        className="toggle-input"
+        type="checkbox"
+      />
+      <button
+        className={`toggle-btn ${on ? 'toggle-btn-on' : 'toggle-btn-off'}`}
+        aria-expanded={on}
+        {...props}
+      />
+    </div>
+  )
 }
+
+Switch.propTypes = {
+  on: PropTypes.bool,
+}
+Switch.defaultProps = {
+  on: false,
+}
+export default Switch
